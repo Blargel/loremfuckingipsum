@@ -2,48 +2,63 @@ require 'yaml'
 
 module LoremIpsumGenerator
   class << self
-    def generate
-       make_paragraph 8, true
+    def generate paragraph_count, profanity_percent
+      return "Lorem fucking ipsum, bitch. Why the fuck are asking to generate less than 1 paragraph?" if paragraph_count < 1
+
+      output = []
+      output << make_paragraph(rand(7)+6, profanity_percent, true)
+
+      (paragraph_count-1).times do
+        output << make_paragraph(rand(7)+6, profanity_percent)
+      end
+
+      output.join "\n\n"
     end
 
     private
 
-    def make_paragraph sentence_count, first=false
+    def make_paragraph sentence_count, profanity_percent, first=false
       if first
-        output = "Lorem fucking ipsum, bitch. "
+        output = ["Lorem fucking ipsum, bitch."]
         sentence_count -= 1
       else
-        output = ""
+        output = []
       end
 
       sentence_count.times do
-        output += make_sentence(rand(16)+5)
+        output << make_sentence(rand(11)+5, profanity_percent)
       end
 
-      output
+      output.join " "
     end
 
-    def make_sentence word_count
-      comma_place = word_count > 8 ? nil : random_comma_place(word_count)
-      output = ""
+    def make_sentence word_count, profanity_percent
+      comma_place = word_count > 8 ? random_comma_place(word_count) : nil
+      output = []
 
       word_count.times do |place|
-        output += random_word
+        profanity = rand(100) < profanity_percent
+        word = ""
+
+        while output.include? word
+          word = profanity ? random_profane_word_group : random_latin_word
+        end
+
+        output << word
+
         case place
         when comma_place
-          output += ", "
+          output << ","
         when word_count-1
-          output += ". "
-        else
-          output += " "
+          output << "."
         end
       end
 
-      output.capitalize
-    end
+      output.map! do |e|
+        e.is_a?(Array) ? e.sample : e
+      end
 
-    def random_word
-      [true, false].sample ? random_latin_word : random_profane_word
+      output.join(" ").gsub(" .", ".").gsub(" ,", ",").strip.capitalize
     end
 
     def random_comma_place word_count
@@ -62,7 +77,7 @@ module LoremIpsumGenerator
       @profane_words ||= YAML.load_file "./config/profanity.yml"
     end
 
-    def random_profane_word
+    def random_profane_word_group
       profane_words.sample
     end
   end
