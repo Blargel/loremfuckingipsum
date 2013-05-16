@@ -3,9 +3,5 @@ module LoremFuckingIpsum
     get '/' do
       erb :index
     end
-
-    get '/*' do
-      redirect '/'
-    end
   end
 end
