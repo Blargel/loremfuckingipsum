@@ -1,0 +1,44 @@
+!!!
+%html
+  %head
+    %meta{ :charset => "UTF-8" }
+    %meta{ :content => "Lorem ipsum generator with profanity sprinkled in. Because you need profanity in your placeholder text.", :name => "description" }
+    %meta{ :content => "index, follow, noarchive", :name => "robots" }
+
+    %script{ :type => "text/javascript", :src => "javascript/jquery-1.9.1.min.js" }
+    %script{ :type => "text/javascript", :src => "javascript/jquery-ui-1.10.3.custom.min.js" }
+    %script{ :type => "text/javascript", :src => "javascript/application.js" }
+
+    %link{ :rel => "stylesheet", :type => "text/css", :href => "stylesheets/jquery-ui-1.10.3.custom.min.css", :media => "all" }
+
+    %title Lorem Fucking Ipsum
+  %body
+    %h1 Lorem Fucking Ipsum
+    %p Use seriously at your own risk. Lorem Fucking Ipsum is not responsible in the event that your clients get offended at you.
+    %p I need to get some fucking CSS.
+
+    %br
+    %br
+
+    %form{ :action => "api/generate", :method => "get" }
+      %input#static_start{ :type => "checkbox", :name => "static_start", :value => "fuck yes" }
+      Start with god damn "Lorem fucking ipsum, bitch."
+
+      %br
+      %br
+
+      %input#paragraphs{ :type => "text", :name => "paragraphs", :value => "4" }
+      How many fucking paragraphs do you want?
+
+      %br
+      %br
+
+      I want to fucking curse
+      %input#profanity_level{ :type => "text", :name => "profanity_level" }
+      percent of the time
+      #slider-range-max{ :style => "width: 500px;" }
+
+      %br
+      %br
+
+      %input{ :type => "Submit", :value => "Generate" }

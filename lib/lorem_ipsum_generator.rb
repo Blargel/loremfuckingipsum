@@ -2,13 +2,17 @@ require 'yaml'
 
 module LoremIpsumGenerator
   class << self
-    def generate paragraph_count, profanity_percent
-      return "Lorem fucking ipsum, bitch. Why the fuck are asking to generate less than 1 paragraph?" if paragraph_count < 1
+    def generate paragraph_count, profanity_percent, static_start
+      return "You sent some fucking weird parameters. Try again, dipshit." if paragraph_count < 1
 
       output = []
-      output << make_paragraph(rand(7)+6, profanity_percent, true)
 
-      (paragraph_count-1).times do
+      if static_start
+        output << make_paragraph(rand(7)+6, profanity_percent, true)
+        paragraph_count -= 1
+      end
+
+      (paragraph_count).times do
         output << make_paragraph(rand(7)+6, profanity_percent)
       end
 
