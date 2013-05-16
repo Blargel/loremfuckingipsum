@@ -4,5 +4,6 @@ require "bundler/setup"
 Bundler.require
 
 (
-  ['./server.rb']
+  ['./server.rb'] +
+  Dir['./lib/**/*.rb'].sort
 ).uniq.each { |rb| require rb }
