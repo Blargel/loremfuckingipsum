@@ -14,7 +14,7 @@ $(function() {
 $(function(){
   $( "textarea#output" ).val( "" )
   $( "#generate" ).click(function(){
-    var url            = $( "form" ).attr( "" )
+    var url            = $( "form" ).attr( "action" )
     var staticStart    = $( "#static_start" ).is( ":checked" );
     var paragraphs     = $( "#paragraphs" ).val();
     var profanityLevel = $( "#profanity_level" ).val();
