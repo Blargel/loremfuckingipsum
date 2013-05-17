@@ -3,7 +3,7 @@ require 'yaml'
 module LoremIpsumGenerator
   class << self
     def generate paragraph_count, profanity_percent, static_start
-      return "You sent some fucking weird parameters. Try again, dipshit." if paragraph_count < 1
+      return "I'm not fucking generating that many paragraphs you jackass." if paragraph_count > 100
 
       output = []
 
