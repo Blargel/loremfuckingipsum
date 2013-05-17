@@ -13,7 +13,7 @@ $(function() {
 
 $(function(){
   $( "textarea#output" ).val( "" )
-  $( "#generate" ).click(function(){
+  $( "#generate" ).click( function(){
     var url            = $( "form" ).attr( "action" )
     var staticStart    = $( "#static_start" ).is( ":checked" );
     var paragraphs     = $( "#paragraphs" ).val();
@@ -33,6 +33,6 @@ $(function(){
       error: function(){
         $( "textarea#output" ).val( "Sorry, man. Something's fucked up." )
       }
-    } );
+    });
   });
 });
