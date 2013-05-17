@@ -14,6 +14,7 @@ $(function() {
 $(function(){
   $( "textarea#output" ).val( "" )
   $( "#generate" ).click(function(){
+    var url            = $( "form" ).attr( "" )
     var staticStart    = $( "#static_start" ).is( ":checked" );
     var paragraphs     = $( "#paragraphs" ).val();
     var profanityLevel = $( "#profanity_level" ).val();
@@ -26,11 +27,11 @@ $(function(){
         paragraphs: paragraphs,
         profanity_level: profanityLevel
       },
-      success: function(data, textStatus, jqXHR){
+      success: function(data){
         $( "textarea#output" ).val( data )
       },
       error: function(){
-        $( "textarea#output" ).val("Sorry, man. Something's fucked up.")
+        $( "textarea#output" ).val( "Sorry, man. Something's fucked up." )
       }
     } );
   });

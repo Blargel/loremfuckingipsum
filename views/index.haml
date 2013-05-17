@@ -20,7 +20,7 @@
     %br
     %br
 
-    %form{ :name => "loremfuckingipsum" }
+    %form{ :action => request.host+":"+request.port.to_s+"/api/generate" }
       Start with god damn "Lorem fucking ipsum, bitch."
       %input#static_start{ :type => "checkbox", :name => "static_start", :value => "fuck yes" }
 
