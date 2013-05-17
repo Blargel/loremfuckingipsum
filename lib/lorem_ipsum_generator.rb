@@ -8,7 +8,7 @@ module LoremIpsumGenerator
       output = []
 
       if static_start
-        output << make_paragraph(rand(7)+6, profanity_percent, true)
+        output << make_paragraph(rand(5)+6, profanity_percent, true)
         paragraph_count -= 1
       end
 

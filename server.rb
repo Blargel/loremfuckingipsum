@@ -5,7 +5,7 @@ module LoremFuckingIpsum
     end
 
     get '/api/generate' do
-      static_start    = params[:static_start]
+      static_start    = params[:static_start] == "true"
       paragraphs      = (params[:paragraphs] || 4).to_i
       profanity_level = (params[:profanity_level] || 40).to_i
 

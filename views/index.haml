@@ -20,20 +20,20 @@
     %br
     %br
 
-    %form{ :action => "api/generate", :method => "get" }
-      %input#static_start{ :type => "checkbox", :name => "static_start", :value => "fuck yes" }
+    %form{ :name => "loremfuckingipsum" }
       Start with god damn "Lorem fucking ipsum, bitch."
+      %input#static_start{ :type => "checkbox", :name => "static_start", :value => "fuck yes" }
 
       %br
       %br
-
-      %input#paragraphs{ :type => "text", :name => "paragraphs", :value => "4" }
+      
       How many fucking paragraphs do you want?
+      %input#paragraphs{ :type => "text", :name => "paragraphs", :value => "4" }
 
       %br
       %br
 
-      I want to fucking curse
+      I'm going to fucking curse
       %input#profanity_level{ :type => "text", :name => "profanity_level" }
       percent of the time
       #slider-range-max{ :style => "width: 500px;" }
@@ -41,4 +41,8 @@
       %br
       %br
 
-      %input{ :type => "Submit", :value => "Generate" }
+      %input#generate{ :type => "button", :value => "Fucking Generate" }
+
+    %br
+
+    %textarea#output{ :rows => "15", :cols => "60" }
