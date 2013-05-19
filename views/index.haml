@@ -9,51 +9,65 @@
     %script{ :type => "text/javascript", :src => "javascript/jquery-ui-1.10.3.custom.min.js" }
     %script{ :type => "text/javascript", :src => "javascript/application.js" }
 
+    %link{ :rel => "stylesheet", :type => "text/css", :href => "http://fonts.googleapis.com/css?family=Voltaire&subset=latin" }
+    %link{ :rel => "stylesheet", :type => "text/css", :href => "http://fonts.googleapis.com/css?family=Noto+Serif:400,400italic" }
     %link{ :rel => "stylesheet", :type => "text/css", :href => "stylesheets/jquery-ui-1.10.3.custom.min.css", :media => "all" }
+    %link{ :rel => "stylesheet", :type => "text/css", :href => "stylesheets/application.css", :media => "all" }
 
     %title Lorem Fucking Ipsum
   %body
-    %h1 Lorem Fucking Ipsum
-    %p Use seriously at your own risk. Lorem Fucking Ipsum is not responsible in the event that your clients get offended at you.
-    %p I need to get some fucking CSS.
+    %div#wrapper
+      %h1 Lorem Fucking Ipsum
+      %img.bloodystyle.fuckingtop{ :src => "stylesheets/images/imgtop.png", :alt => "Fucking Image" }
+      #container    
+        %h2 Use seriously at your own risk. Lorem Fucking Ipsum is not responsible in the event that your clients get offended at you.
 
-    %br
-    %br
+        %img.bloodystyle{ :src => "stylesheets/images/imgclassy.png",  :width => "53", :height => "16", :alt => "Stay classy, motherfucker" }
 
-    %form{ :action => request.host+":"+request.port.to_s+"/api/generate" }
-      Start with god damn "Lorem fucking ipsum, bitch."
-      %input#static_start{ :type => "checkbox", :name => "static_start", :value => "fuck yes" }
+        %form{ :action => request.host+":"+request.port.to_s+"/api/generate" }
+          Start with god damn "Lorem fucking ipsum, bitch."
+          %input#static_start{ :type => "checkbox", :name => "static_start", :value => "fuck yes" }
 
-      %br
-      %br
-      
-      How many fucking paragraphs do you want?
-      %input#paragraphs{ :type => "text", :name => "paragraphs", :value => "4" }
+          %br
+          %br
 
-      %br
-      %br
+          How many fucking paragraphs do you want?
+          %input#paragraphs{ :type => "text", :name => "paragraphs", :value => "4" }
 
-      I'm going to fucking curse
-      %input#profanity_level{ :type => "text", :name => "profanity_level" }
-      percent of the time
-      #slider-range-max{ :style => "width: 500px;" }
+          %br
+          %br
 
-      %br
-      %br
+          I'm going to fucking curse
+          %input#profanity_level{ :type => "text", :name => "profanity_level" }
+          percent of the time
+          #slider-range-max
 
-      %input#generate{ :type => "button", :value => "Fucking Generate" }
+          %br
+          %br
 
-    %br
+          %input#generate{ :type => "button", :value => "Fucking Generate" }
 
-    %textarea#output{ :rows => "15", :cols => "60" }
+          %br
+          %br
 
-    %script{ :type => "text/javascript" }
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-15014212-2']);
-      _gaq.push(['_trackPageview']);
+          %textarea#output{ :rows => "15", :cols => "60" }
 
-      (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
+          %p.footnote
+            Created by
+            %a{ :href => "http://www.github.com/Blargel"} Abner Qian
+            %br
+            Design by
+            %a{ :href => "http://www.rosanamc.com" } Rosana Margarida
+            
+
+          %script{ :type => "text/javascript" }
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-15014212-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+    %img.bloodystyle.fuckingbottom{ :src => "stylesheets/images/imgbottom.png", :alt => "Still here, fuckwad?" }
