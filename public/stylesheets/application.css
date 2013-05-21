@@ -109,11 +109,19 @@ a:hover{
 }
 
 #ShareBar{
-    background-color: #fbfaf8;
+    background-color: #c5c0b6;
     -webkit-box-shadow: 0px 0px 5px rgba(00, 00, 00, 0.4);
     box-shadow: 0px 0px 5px rgba(00, 00, 00, 0.4);
     -webkit-border-radius: 5px 0 0 5px;
     border-radius: 5px 0 0 5px;
-    padding: 5px;
+    padding: 7px;
     text-align: center;
+}
+#e {
+    max-width: 100% !important; 
+    display:block !important;
+    margin: 5px auto !important;
+}
+#e:hover{
+    margin-left:0 !important;
 }
